@@ -15,6 +15,7 @@ public class News {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String icon;
 	private String description;
 	
 	@ManyToOne
@@ -26,8 +27,9 @@ public class News {
 	}
 
 
-	public News(Long id, String description, User user) {
+	public News(Long id, String icon, String description, User user) {
 		this.id = id;
+		this.icon = icon;
 		this.description = description;
 		this.user = user;
 	}
@@ -40,6 +42,16 @@ public class News {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+
+	public String getIcon() {
+		return icon;
+	}
+
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 
